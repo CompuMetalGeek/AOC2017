@@ -1,26 +1,19 @@
-my $filename = "day01_input";
+use Term::ANSIColor;
+my $filename = "${0}_input";
+open(my $fh, $filename);
 
-my $fh;
-open($fh, $filename);
+chomp (my $input = <$fh>);
 
-my @input;
-
-$input = <$fh>;
-my $sum = 0;
-my $sum2 = 0;
+my $sum;
+my $sum2;
 my $len = length $input;
 for (my $i = 0; $i < $len; $i++) {
 	my $current = substr($input, $i, 1);
-	my $next  = substr($input, ($i+1) % ($len),1);
-	my $halfway = substr($input,($i+$len/2)%($len),1);
-	if($current==$next){
-		$sum+=$current;
-	}
-	if($current==$halfway){
-		$sum2+=$current;
-	}
+	my $next  = substr($input, ($i+1) % ($len), 1);
+	my $halfway = substr($input, ($i+$len/2)%($len), 1);
+
+	$sum += $current if( $current == $next );
+	$sum2 += $current if( $current == $halfway );
 }
-printf "sum of al chars that are equal to themselves is %d\n", $sum;
-printf "sum of al chars that are equal to their halfway equal is %d", $sum2;
-
-
+print "Sum of al chars that are equal to their follower is ", colored( $sum, "bright_red" ), ".\n";
+print "Sum of al chars that are equal to their halfway equal is ", colored($sum2,"bright_red"), " .\n";
