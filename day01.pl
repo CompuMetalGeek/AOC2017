@@ -16,4 +16,4 @@ for (my $i = 0; $i < $len; $i++) {
 	$sum2 += $current if( $current == $halfway );
 }
 print "Sum of al chars that are equal to their follower is ", colored( $sum, "bright_red" ), ".\n";
-print "Sum of al chars that are equal to their halfway equal is ", colored($sum2,"bright_red"), " .\n";
+print "Sum of al chars that are equal to their halfway equal is ", colored($sum2,"bright_red"), ".\n";

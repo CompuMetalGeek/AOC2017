@@ -5,5 +5,6 @@ for (@ARGV){
 	if(-e $filename){
 		printf "Day %2.2d\n------\n",$_;
 		system("perl $filename");
+		print "\n";
 	}
 }
