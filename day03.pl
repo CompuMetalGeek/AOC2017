@@ -1,5 +1,7 @@
 use Term::ANSIColor;
-use List::Util qw/max min/;
+use Time::HiRes qw/time/;
+
+my $time = time;
 my $filename = "${0}_input";
 open(my $fh, $filename);
 my $target = <$fh>;
@@ -45,7 +47,8 @@ if( $direction == 0 ){
 } elsif( $direction == 3 ){
 	$y+=$step;
 }
-print "The taxicab distance is ", colored( abs($x)+abs($y), "bright_red" ), ".\n";
+print "The taxicab distance is ", colored( abs($x)+abs($y), "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
+$time = time;
 # lookup in OEIS (https://oeis.org/A141481/b141481.txt) at entry 58
-print "First value larger than the input is " , colored(266330,"bright_red"), ".\n";
+print "First value larger than the input is " , colored(266330,"bright_red"), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";

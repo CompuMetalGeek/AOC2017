@@ -1,9 +1,11 @@
 use Term::ANSIColor;
+use Time::HiRes qw/time/;
 
 my $filename = "${0}_input";
-
+my $time = time;
 open(my $fh, $filename);
 @input = <$fh>;
+@original = @input;
 my $location = 0;
 my $counter = 0;
 
@@ -12,10 +14,9 @@ while($location < scalar @input){
 	$counter++;
 }
 
-print "First case, we escape after ", colored( $counter, "bright_red" ), " steps.\n";
-
-seek $fh, 0, 0;
-@input = <$fh>;
+print "First case, we escape after ", colored( $counter, "bright_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+$time=time;
+@input = @original;
 
 my $location = 0;
 my $oldLocation = $location;
@@ -28,4 +29,4 @@ while($location < scalar @input){
 	$counter++;
 }
 
-print "Second case, we escape after ", colored( $counter, "bright_red" ), " steps.\n";
+print "Second case, we escape after ", colored( $counter, "bright_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
