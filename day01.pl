@@ -1,3 +1,4 @@
+use strict;
 use Term::ANSIColor;
 use Time::HiRes qw/time/;
 

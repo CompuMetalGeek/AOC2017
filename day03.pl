@@ -1,3 +1,4 @@
+use strict;
 use Term::ANSIColor;
 use Time::HiRes qw/time/;
 
@@ -7,7 +8,7 @@ open(my $fh, $filename);
 my $target = <$fh>;
 chomp $target;
 
-my $x=0, $y=0;
+my $x=0, my $y=0;
 my $index=1;
 my $direction = 0; # 0 is right, 1 up, 2 left, 3 down
 my $step = 1;

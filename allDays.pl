@@ -1,3 +1,4 @@
+use strict;
 @ARGV = (1..25) unless @ARGV;
 
 for (@ARGV){

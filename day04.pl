@@ -1,3 +1,4 @@
+use strict;
 use Term::ANSIColor;
 use Time::HiRes qw/time/;
 
@@ -8,11 +9,11 @@ open(my $fh, $filename);
 my $numberOfSafePassphrases = 0;
 my $numberOfExtraSafePassphrases = 0;
 
-while($input = <$fh>){
+while(my $input = <$fh>){
 	if($input !~ /(\b\w+\b).*\1/){
 		$numberOfSafePassphrases++;
 	}
-	@input = split " ", $input;
+	my @input = split " ", $input;
 	foreach my $x (@input) {
 		$x = join "", sort(split "", $x);
 	}

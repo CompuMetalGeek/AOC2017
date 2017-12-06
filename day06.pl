@@ -1,3 +1,4 @@
+use strict;
 use Term::ANSIColor;
 use Time::HiRes qw/time/;
 use List::Util qw/max/;
@@ -23,7 +24,7 @@ while(!$duplicateFound){
 	# execute redistribution
 	@input = redistribute(\@input);
 	# get representation of state
-	$currentState = toString(@input);
+	my $currentState = toString(@input);
 	# check if we've been in this state
 	$duplicateFound = contains(\@states, $currentState);
 	# add state to all passed states

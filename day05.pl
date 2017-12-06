@@ -1,11 +1,12 @@
+use strict;
 use Term::ANSIColor;
 use Time::HiRes qw/time/;
 
 my $filename = "${0}_input";
 my $time = time;
 open(my $fh, $filename);
-@input = <$fh>;
-@original = @input;
+my @input = <$fh>;
+my @original = @input;
 my $location = 0;
 my $counter = 0;
 

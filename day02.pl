@@ -1,3 +1,4 @@
+use strict;
 use Term::ANSIColor;
 use List::Util qw/max min/;
 use Time::HiRes qw/time/;
