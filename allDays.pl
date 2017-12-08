@@ -1,4 +1,8 @@
 use strict;
+use Time::HiRes qw/time/;
+use Term::ANSIColor;
+
+my $time = time;
 @ARGV = (1..25) unless @ARGV;
 
 for (@ARGV){
@@ -9,3 +13,5 @@ for (@ARGV){
 		print "\n";
 	}
 }
+
+print "The complete advent takes ",colored( sprintf("%.3f s",time-$time), "green")," to run.\n";
