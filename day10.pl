@@ -68,4 +68,6 @@ for (my $densePart = 0; $densePart < 16; $densePart++) {
 	push @denseList, $value;
 }
 
-printf("%.2x",$_) foreach (@denseList);
+my $hex ="";
+$hex .= sprintf("%.2x",$_) foreach (@denseList);
+print "The knot hash is ", colored( $hex, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
