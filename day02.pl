@@ -1,5 +1,6 @@
 use strict;
 use Term::ANSIColor;
+use Win32::Console::ANSI;
 use List::Util qw/max min/;
 use Time::HiRes qw/time/;
 

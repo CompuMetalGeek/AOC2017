@@ -1,6 +1,7 @@
 use strict;
 use Time::HiRes qw/time/;
 use Term::ANSIColor;
+use Win32::Console::ANSI;
 
 my $time = time;
 @ARGV = (1..25) unless @ARGV;
