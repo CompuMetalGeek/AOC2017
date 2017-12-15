@@ -29,5 +29,5 @@ while( 0 < read($fh, my $input, 1) ) {
 	}
 }
 
-print "The total score is ", colored( $score, "bright_red" ), ".\n";
-print "The total amount of garbage is ", colored( $charsInGarbage, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The total score is ", colored( $score, "black on_red" ), ".\n";
+print "The total amount of garbage is ", colored( $charsInGarbage, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";

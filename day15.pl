@@ -34,7 +34,7 @@ for (my $i = 0; $i < 40000000; $i++) {
 	}
 }
 
-print "The final count is ", colored( $count, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The final count is ", colored( $count, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 $time = time;
 $count = 0;
@@ -53,5 +53,5 @@ for (my $i = 0; $i < 5000000; $i++) {
 	}
 }
 
-print "The final count for multiples of $genAMultiple and $genBMultiple is ", colored( $count, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The final count for multiples of $genAMultiple and $genBMultiple is ", colored( $count, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 

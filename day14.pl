@@ -25,7 +25,7 @@ for(my $i=0;$i<128;$i++){
 }
 
 
-print "There are ", colored( $sum, "bright_red" ), " Squares. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "There are ", colored( $sum, "black on_red" ), " Squares. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 my $groups = 1;
 for my $i ( 0 .. $#grid ) {
@@ -39,7 +39,7 @@ for my $i ( 0 .. $#grid ) {
 $time = time;
 
 
-print "There are ", colored( $groups-1, "bright_red" ), " Groups. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "There are ", colored( $groups-1, "black on_red" ), " Groups. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 sub knotHash {
 	my @list = (0..255);

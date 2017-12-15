@@ -16,7 +16,7 @@ while($location < scalar @input){
 	$counter++;
 }
 
-print "First case, we escape after ", colored( $counter, "bright_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "First case, we escape after ", colored( $counter, "black on_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 $time=time;
 @input = @original;
 
@@ -31,4 +31,4 @@ while($location < scalar @input){
 	$counter++;
 }
 
-print "Second case, we escape after ", colored( $counter, "bright_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "Second case, we escape after ", colored( $counter, "black on_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";

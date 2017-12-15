@@ -27,5 +27,5 @@ while(<$fh>){
 
 
 
-print "The checksum is ", colored( $sum, "bright_red" ), ".\n";
-print "The sum of each result is " , colored($sum2,"bright_red"), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The checksum is ", colored( $sum, "black on_red" ), ".\n";
+print "The sum of each result is " , colored($sum2,"black on_red"), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";

@@ -31,7 +31,7 @@ for my $length (@input){
 	$skip++;
 }
 
-print "The product of the first two numbers is ", colored( $list[0]*$list[1], "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The product of the first two numbers is ", colored( $list[0]*$list[1], "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 $time = time;
 @input=();
@@ -71,4 +71,4 @@ for (my $densePart = 0; $densePart < 16; $densePart++) {
 
 my $hex ="";
 $hex .= sprintf("%.2x",$_) foreach (@denseList);
-print "The knot hash is ", colored( $hex, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The knot hash is ", colored( $hex, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";

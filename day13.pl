@@ -49,7 +49,7 @@ while($position<=$maxPosition){
 	}
 }
 
-print "The severity of starting at 0 ps is ", colored( $severity, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The severity of starting at 0 ps is ", colored( $severity, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 $time = time;
 
@@ -92,4 +92,4 @@ while( $severity != 0 ){
 	}
 }
 
-print "You need to delay your start with ", colored( "$delay ps", "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "You need to delay your start with ", colored( "$delay ps", "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";

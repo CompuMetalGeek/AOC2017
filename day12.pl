@@ -28,7 +28,7 @@ while(my $input = <$fh>){
 
 my $set = Set::Scalar->new;
 getConnectedElements(0,$set);
-print "There are ", colored( $set->size, "bright_red" ), " elements in the set that contains process 0. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "There are ", colored( $set->size, "black on_red" ), " elements in the set that contains process 0. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 
 my $time = time;
@@ -42,7 +42,7 @@ while(keys %links > 0){
 	}
 }
 
-print "There are ", colored( $sets, "bright_red" ), " groups of processes. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "There are ", colored( $sets, "black on_red" ), " groups of processes. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 
 

@@ -31,7 +31,7 @@ foreach my $element (keys %values) {
 	}
 }
 
-print "The bottom program is named ", colored( $root, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The bottom program is named ", colored( $root, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 $time = time;
 my @problemChildren;
 my @problemValues;
@@ -51,7 +51,7 @@ for (my $i = 0; $i < scalar @problemValues; $i++) {
 }
 	
 print "The new value for the wrong program ($wrongProgram) is ", 
-	colored( $wrongValue + ($correctTotal-$wrongTotal), "bright_red" ), 
+	colored( $wrongValue + ($correctTotal-$wrongTotal), "black on_red" ), 
 	". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 

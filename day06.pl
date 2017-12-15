@@ -32,9 +32,9 @@ while(!$duplicateFound){
 	push @states, $currentState;
 }
 
-print "We have a duplicate after ", colored( $cycles, "bright_red" ), " cycles. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "We have a duplicate after ", colored( $cycles, "black on_red" ), " cycles. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 $time = time;
-print "The loop is ", colored( getLoopSize(\@states), "bright_red" ), " cycles. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The loop is ", colored( getLoopSize(\@states), "black on_red" ), " cycles. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 
 sub toString {

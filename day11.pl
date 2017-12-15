@@ -40,8 +40,8 @@ while(my $input = <$fh>){
 
 	($north,$northeast,$northwest) = calculateDistance($north,$northeast,$northwest);
 	
-	print "The required number of steps is ", colored( abs($north)+abs($northeast)+abs($northwest), "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
-	print "The furthest away was ", colored( $maxDistance, "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+	print "The required number of steps is ", colored( abs($north)+abs($northeast)+abs($northwest), "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+	print "The furthest away was ", colored( $maxDistance, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 }
 
 sub calculateDistance {

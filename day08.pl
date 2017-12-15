@@ -29,8 +29,8 @@ while(my $input = <$fh>){
 my ($max, $maxvar) = calculateMaxValue();
 
 
-print "The maximum value at the end is ", colored( $max, "bright_red" ), " (stored in '$maxvar').\n";
-print "The maximum value ever stored is ", colored( $globalMax, "bright_red" ), " (stored in '$globalMaxvar'). ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The maximum value at the end is ", colored( $max, "black on_red" ), " (stored in '$maxvar').\n";
+print "The maximum value ever stored is ", colored( $globalMax, "black on_red" ), " (stored in '$globalMaxvar'). ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 
 

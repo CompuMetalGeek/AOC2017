@@ -49,8 +49,8 @@ if( $direction == 0 ){
 } elsif( $direction == 3 ){
 	$y+=$step;
 }
-print "The taxicab distance is ", colored( abs($x)+abs($y), "bright_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "The taxicab distance is ", colored( abs($x)+abs($y), "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
 $time = time;
 # lookup in OEIS (https://oeis.org/A141481/b141481.txt) at entry 58
-print "First value larger than the input is " , colored(266330,"bright_red"), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "First value larger than the input is " , colored(266330,"black on_red"), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";

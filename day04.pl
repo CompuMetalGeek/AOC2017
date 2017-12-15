@@ -24,5 +24,5 @@ while(my $input = <$fh>){
 	}
 }
 
-print "There are ", colored( $numberOfSafePassphrases, "bright_red" ), " safe passphrases.\n";
-print "There are ", colored( $numberOfExtraSafePassphrases, "bright_red" ), " extra safe passphrases. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "There are ", colored( $numberOfSafePassphrases, "black on_red" ), " safe passphrases.\n";
+print "There are ", colored( $numberOfExtraSafePassphrases, "black on_red" ), " extra safe passphrases. ( ", sprintf ("%.3f",time - $time) ," s )\n";
