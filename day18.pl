@@ -26,7 +26,7 @@ while( ! defined $recovered ){
 sub processCommand {
 	my $command = shift;
 	my @command = @{$command};
-	print join(" ",@command), "\n";
+	# print join(" ",@command), "\n";
 
 	if($command[0] eq "snd") {
 		$lastSound = $register{$command[1]};
@@ -100,7 +100,7 @@ print "Program 1 sent ", colored( $sndcount1, "black on_red" ), " values. ( ", s
 sub processCommand0 {
 	my $command = shift;
 	my @command = @{$command};
-	print "0: ",join(" ",@command), "\n";
+	# print "0: ",join(" ",@command), "\n";
 
 	if($command[0] eq "snd") {
 		push @queue1, $register0{$command[1]};
@@ -137,7 +137,8 @@ sub processCommand0 {
 		$register0{$command[1]} = shift @queue0;
 		$blocking0 = 0;
 	} elsif ($command[0] eq "jgz") {
-		if( $register0{$command[1]} > 0){
+		my $value = $command[1] =~/[a-z]/ ? $register0{$command[1]} : $command[1];
+		if($value > 0){
 			if($command[2] =~ /[a-z]/){
 				return $index0 + $register0{$command[2]};
 			} else {
@@ -154,7 +155,7 @@ sub processCommand0 {
 sub processCommand1 {
 	my $command = shift;
 	my @command = @{$command};
-	print "1: ", join(" ",@command), "\n";
+	# print "1: ", join(" ",@command), "\n";
 
 	if($command[0] eq "snd") {
 		push @queue0, $register1{$command[1]};
@@ -191,7 +192,8 @@ sub processCommand1 {
 		$register1{$command[1]} = shift @queue1;
 		$blocking1 = 0;
 	} elsif ($command[0] eq "jgz") {
-		if( $register1{$command[1]} > 0){
+		my $value = $command[1] =~/[a-z]/ ? $register1{$command[1]} : $command[1];
+		if($value > 0){
 			if($command[2] =~ /[a-z]/){
 				return $index1 + $register1{$command[2]};
 			} else {
