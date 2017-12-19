@@ -13,7 +13,7 @@ chomp $start;
 my @grid;
 
 my $sum = 0;
-for(my $i=0;$i<128;$i++){
+for(my $i=0; $i < 128; $i++){
 	my $string = sprintf("%s-%d",$start,$i);
 	my @hash = split "",knotHash($string);
 	my @line;
@@ -27,6 +27,8 @@ for(my $i=0;$i<128;$i++){
 
 print "There are ", colored( $sum, "black on_red" ), " Squares. ( ", sprintf ("%.3f",time - $time) ," s )\n";
 
+$time = time;
+
 my $groups = 1;
 for my $i ( 0 .. $#grid ) {
 	for my $j ( 0 .. $#{$grid[$i]} ) {
@@ -36,7 +38,6 @@ for my $i ( 0 .. $#grid ) {
 }
 
 
-$time = time;
 
 
 print "There are ", colored( $groups-1, "black on_red" ), " Groups. ( ", sprintf ("%.3f",time - $time) ," s )\n";

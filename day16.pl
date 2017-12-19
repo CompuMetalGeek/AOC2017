@@ -48,7 +48,7 @@ while (1) {
 	
 	if($i==1){
 		print "The order after 1 dance is ", colored( $output, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
-	} elsif($i % 1000000 == 0){
+	} elsif($i % 1_000_000 == 0){
 		print "$i\n";
 	}
 	

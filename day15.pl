@@ -10,22 +10,22 @@ open(my $fh, $filename);
 my $genAVal = <$fh>;
 $genAVal = (split " ",$genAVal)[-1];
 my $genAVal2 = $genAVal;
-my $genAFactor = 16807;
+my $genAFactor = 16_807;
 my $genAMultiple = 4;
 
 my $genBVal = <$fh>;
 $genBVal = (split " ",$genBVal)[-1];
 my $genBVal2 = $genBVal;
-my $genBFactor = 48271;
+my $genBFactor = 48_271;
 my $genBMultiple = 8;
 
-my $divisor = 2147483647;
+my $divisor = 2_147_483_647;
 my $bitmask = 0b1111111111111111;
 
 my $count = 0;
 my $count2 = 0;
 
-for (my $i = 0; $i < 40000000; $i++) {
+for (my $i = 0; $i < 40_000_000; $i++) {
 	$genAVal = ($genAVal * $genAFactor) % $divisor;
 	$genBVal = ($genBVal * $genBFactor) % $divisor;
 
@@ -38,7 +38,7 @@ print "The final count is ", colored( $count, "black on_red" ), ". ( ", sprintf 
 
 $time = time;
 $count = 0;
-for (my $i = 0; $i < 5000000; $i++) {
+for (my $i = 0; $i < 5_000_000; $i++) {
 
 	do{
 		$genAVal2 = ($genAVal2 * $genAFactor) % $divisor;
