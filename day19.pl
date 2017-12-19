@@ -39,7 +39,6 @@ while(1){
 	}
 	$steps++;
 	my $location = $grid[$y][$x];
-	printf "(%3d,%3d) $location\n", $x,$y;
 	if($location eq "+"){
 		changeDirection();
 	} elsif($location eq " "){
