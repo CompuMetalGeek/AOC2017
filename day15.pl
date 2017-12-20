@@ -25,6 +25,7 @@ my $bitmask = 0b1111111111111111;
 my $count = 0;
 my $count2 = 0;
 
+my $iterations = 40_000_000;
 for (my $i = 0; $i < 40_000_000; $i++) {
 	$genAVal = ($genAVal * $genAFactor) % $divisor;
 	$genBVal = ($genBVal * $genBFactor) % $divisor;
@@ -32,13 +33,19 @@ for (my $i = 0; $i < 40_000_000; $i++) {
 	if(($genAVal & $bitmask) == ($genBVal & $bitmask)){
 		$count++;
 	}
+	if($i % ($iterations/100) == 0 ){
+		local $| = 1;
+		printf "\r%3d %% completed -- current count is %d", $i / ($iterations/100), $count;
+	}
 }
 
-print "The final count is ", colored( $count, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "\rThe final count is ", colored( $count, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )                           \n";
 
 $time = time;
 $count = 0;
-for (my $i = 0; $i < 5_000_000; $i++) {
+
+$iterations = 5_000_000;
+for (my $i = 0; $i < $iterations; $i++) {
 
 	do{
 		$genAVal2 = ($genAVal2 * $genAFactor) % $divisor;
@@ -51,7 +58,11 @@ for (my $i = 0; $i < 5_000_000; $i++) {
 	if(($genAVal2 & $bitmask) == ($genBVal2 & $bitmask)){
 		$count++;
 	}
+	if($i % ($iterations/100) == 0 ){
+		local $| = 1;
+		printf "\r%3d %% completed -- current count is %d", $i / ($iterations/100), $count;
+	}
 }
 
-print "The final count for multiples of $genAMultiple and $genBMultiple is ", colored( $count, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "\rThe final count for multiples of $genAMultiple and $genBMultiple is ", colored( $count, "black on_red" ), ". ( ", sprintf ("%.3f",time - $time) ," s )\n";
 

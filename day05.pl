@@ -29,6 +29,10 @@ while($location < scalar @input){
 	$location += $input[$location];
 	$input[$oldLocation] += $input[$oldLocation] < 3 ? 1 : -1 ;
 	$counter++;
+	if ($counter % 1_000 == 0){
+		local $| = 1;
+		print "\rstep $counter";
+	}
 }
 
-print "Second case, we escape after ", colored( $counter, "black on_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
+print "\rSecond case, we escape after ", colored( $counter, "black on_red" ), " steps. ( ", sprintf ("%.3f",time - $time) ," s )\n";
