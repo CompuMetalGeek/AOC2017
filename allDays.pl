@@ -7,6 +7,9 @@ my $time = time;
 @ARGV = (1..25) unless @ARGV;
 
 for (@ARGV){
+	if($_=~ /(\d)+-(\d+)/){
+		push @ARGV, ($1..$2);
+	}
 	my $filename = "day".($_<10?"0".$_:$_).".pl";
 	if(-e $filename){
 		printf "Day %2.2d\n------\n",$_;
